@@ -7,9 +7,27 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; background: #013220; color: #fff; }
         .header { background: #145214; color: #fff; padding: 16px; text-align: center; }
-        .tabs { display: flex; background: #145214; }
-        .tab { flex: 1; padding: 12px; text-align: center; cursor: pointer; transition: background 0.2s; background: #145214; color: #fff; }
-        .tab.active { background: #1e7a34; border-bottom: 2px solid #fff; font-weight: bold; color: #fff; }
+        .tabs { display: flex; background: #145214; justify-content: center; gap: 16px; padding: 16px 0; }
+        .tab {
+            flex: none;
+            padding: 14px 32px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            background: #fff;
+            color: #145214;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            border: none;
+            outline: none;
+            margin: 0 4px;
+        }
+        .tab.active {
+            background: #1e7a34;
+            color: #fff;
+            border-bottom: none;
+        }
         .content { padding: 24px; background: #145214; min-height: 200px; color: #fff; border-radius: 0 0 8px 8px; }
         a { color: #aaffaa; }
     </style>
