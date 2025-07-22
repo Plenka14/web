@@ -6,7 +6,51 @@
     <title>Мини-приложение</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; background: #013220; color: #fff; }
-        .header { background: #145214; color: #fff; padding: 16px; text-align: center; }
+        .header { background: #145214; color: #fff; padding: 10px 0 8px 0; text-align: center; }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+        .logo-rect {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            padding: 4px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+        }
+        .logo-rect img {
+            height: 28px;
+            width: auto;
+            display: block;
+        }
+        .header-link {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .header-job {
+            font-size: 1em;
+            font-weight: bold;
+            color: #aaffaa;
+            letter-spacing: 1px;
+            background: rgba(20,82,20,0.7);
+            border-radius: 14px;
+            padding: 5px 12px;
+        }
+        @media (min-width: 500px) {
+            .header-flex { gap: 24px; }
+            .logo-rect { height: 56px; padding: 6px 18px; border-radius: 18px; }
+            .logo-rect img { height: 48px; }
+            .header-link { font-size: 2em; letter-spacing: 2px; }
+            .header-job { font-size: 1.3em; letter-spacing: 2px; border-radius: 20px; padding: 8px 22px; }
+        }
         .tabs { display: flex; background: #145214; justify-content: center; gap: 16px; padding: 16px 0; }
         .tab {
             flex: none;
@@ -34,7 +78,13 @@
 </head>
 <body>
     <div class="header">
-        <div id="fio">Пользователь</div>
+        <div class="header-flex">
+            <div class="logo-rect">
+                <img src="img/logo.png" alt="LabArte">
+            </div>
+            <a href="https://lab-arte.ru/?utm_source=yandex_msk&calltouch_tm=yd_c:118591738_gb:5549172677_ad:16886470962_ph:54416280195_st:search_pt:premium_p:2_s:none_dt:desktop_reg:213_ret:54416280195_apt:none&utm_medium=cpc&utm_campaign=118591738&utm_content=16886470962&utm_term=lab%20arte%20официальный&yclid=10464072944822517759" target="_blank" class="header-link">LabArte</a>
+            <span class="header-job">JOB</span>
+        </div>
     </div>
     <div class="tabs">
         <div class="tab active" id="tab-news">Новости</div>
