@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-приложение</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #013220; color: #fff; }
+        .header { background: #145214; color: #fff; padding: 16px; text-align: center; }
+        .tabs { display: flex; background: #145214; }
+        .tab { flex: 1; padding: 12px; text-align: center; cursor: pointer; transition: background 0.2s; background: #145214; color: #fff; }
+        .tab.active { background: #1e7a34; border-bottom: 2px solid #fff; font-weight: bold; color: #fff; }
+        .content { padding: 24px; background: #145214; min-height: 200px; color: #fff; border-radius: 0 0 8px 8px; }
+        a { color: #aaffaa; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div id="fio">Пользователь</div>
+    </div>
+    <div class="tabs">
+        <div class="tab active" id="tab-news">Новости</div>
+        <div class="tab" id="tab-ann">Объявления</div>
+    </div>
+    <div class="content" id="content">
+        <h2>Новости</h2>
+        <ul>
+            <li>Запущено новое мини-приложение!</li>
+            <li>Добавлены вкладки для удобства.</li>
+        </ul>
+    </div>
+    <script>
+        // Получаем ФИО из параметра URL
+        function getFioFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('fio') || 'Пользователь';
+        }
+        document.getElementById('fio').textContent = getFioFromUrl();
+
+        // Вкладки
+        const tabNews = document.getElementById('tab-news');
+        const tabAnn = document.getElementById('tab-ann');
+        const content = document.getElementById('content');
+
+        tabNews.onclick = function() {
+            tabNews.classList.add('active');
+            tabAnn.classList.remove('active');
+            content.innerHTML = `<h2>Новости</h2><ul><li>Запущено новое мини-приложение!</li><li>Добавлены вкладки для удобства.</li></ul>`;
+        };
+        tabAnn.onclick = function() {
+            tabAnn.classList.add('active');
+            tabNews.classList.remove('active');
+            content.innerHTML = `<h2>Объявления</h2><ul><li>Внимание! Скоро обновления.</li><li>Следите за новостями в этом разделе.</li></ul>`;
+        };
+    </script>
+</body>
+</html> 
